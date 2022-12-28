@@ -28,7 +28,7 @@ jobs:
       - name: SetSecret
         run: |
           sed -i "s/TOKEN/${{secrets.GIT_TOKEN}}/g" "${{ github.workspace }}/script.js"
-          dir ${{github.workspace}}
+          echo ${{github.workspace}}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
