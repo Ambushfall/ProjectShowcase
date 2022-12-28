@@ -26,7 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SetSecret
-        run: sed -i "s/TOKEN/${{secrets.GIT_TOKEN}}/g" ${{ github.repository }}/script.js
+        run: |
+          sed -i "s/TOKEN/${{secrets.GIT_TOKEN}}/g" "${{ github.workspace }}/script.js"
+          dir ${{github.workspace}}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
