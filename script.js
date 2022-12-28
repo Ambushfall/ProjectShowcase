@@ -4,7 +4,7 @@ const hideForks = false;
 const repoList = document.querySelector('.repo-list');
 const reposSection = document.querySelector('.repos');
 const filterInput = document.querySelector('.filter-repos');
-console.log(${{ secrets.GITHUB_TOKEN }})
+const GITSECRET = "TOKEN"
 
 // get information from github profile
 const getProfile = async () => {
