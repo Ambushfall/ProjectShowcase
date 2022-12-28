@@ -25,12 +25,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: SetSecret
         run: |
           sed -i "s/TOKEN/${{secrets.GIT_TOKEN}}/g" "${{ github.workspace }}/script.js"
           echo ${{github.workspace}}
-      - name: Checkout
-        uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Build with Jekyll
